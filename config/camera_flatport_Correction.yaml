@@ -1,0 +1,31 @@
+# Physical parameters (millimiters)
+glass_thickness: 10.0
+normal_vector: [0.0, 0.0, 1.0]
+distance_to_glass: 1.4282
+virtual_distance: 0.5851
+projection_distance: 5000.0
+
+# Refraction parameters
+glass_refractive_index: 1.5
+water_refractive_index: 1.335
+
+# Camera parameters
+K_matrix: [1403.882943803675700, 0.0, 616.238499749930610, 0.0, 1407.482157830063400, 479.792602354303430, 0.0, 0.0, 1.0]
+D_matrix: [-0.273139587484678, 0.216093918966729, -0.000214253361360, -0.001770247078481, 0.0]
+
+# Image parameters
+width: 1280
+height: 960
+scale: 1.0
+path: "imgs/testImg.jpg"
+
+# Mapping parameters
+compute_map: false
+map_path: "maps/example_mapXY.npy"
+
+# Solver parameters
+cuda: true
+
+# Save parameters
+save_path: "maps/example_mapXY.npy"
+save_mapping: true

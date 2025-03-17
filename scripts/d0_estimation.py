@@ -1,32 +1,13 @@
-import argparse
-import yaml
-
 import numpy as np
 from scipy.optimize import least_squares
 
-import pinax_utlis as pu
-
-
-
-def parse_args():
-    parser = argparse.ArgumentParser(description='Estimate d0')
-    parser.add_argument('--cfg', type=str, default='./config.yaml', help='YAML Configuration file')
-    parser.add_argument("opts", default=None, nargs=argparse.REMAINDER)
-    return parser.parse_args()
-
-def read_cfg(cfg_file):
-    # Read the YAML configuration file
-    with open(cfg_file, 'r') as file:
-        try:
-            cfg = yaml.safe_load(file)
-        except yaml.YAMLError as exc:
-            print(exc)
-    return cfg
+import lib.pinax as pu
+import lib.general_utlis as gu
 
 def main():
 
-    args = parse_args()
-    cfg = read_cfg(args.cfg)
+    args = gu.parse_args('Estimate d0')
+    cfg = gu.read_cfg(args.cfg)
 
     # Camera Parameters
     matrixK = np.array(cfg['K_matrix'], dtype=np.float64)

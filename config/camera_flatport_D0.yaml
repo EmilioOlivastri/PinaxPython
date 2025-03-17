@@ -1,0 +1,16 @@
+# Physical parameters (millimiters)
+glass_thickness: 10.0
+normal_vector: [0.0, 0.0, 1.0]
+distance_to_glass: 1.5
+
+# Refraction parameters
+glass_refractive_index: 1.492
+water_refractive_index: 1.345
+
+# Camera parameters
+K_matrix: [900.0, 0.0, 512.0, 0.0, 900.0, 384.0, 0.0, 0.0, 1.0]
+D_matrix: [0.0, 0.0, 0.0, 0.0, 0.0]
+
+# Optimization parameters (millimiters)
+initial_guess: 0.1
+verbose: true
