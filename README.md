@@ -1,6 +1,6 @@
 # Pinax Camera Model
 
-Python implementation from the paper on the [pinax](https://www.sciencedirect.com/science/article/pii/S0029801817300434) camera model.
+Python implementation of the [code](https://github.com/tomluc/Pinax-camera-model) from the paper on the [pinax](https://www.sciencedirect.com/science/article/pii/S0029801817300434) camera model.
 
 ## Structure
 ```
@@ -23,7 +23,7 @@ Given camera, flat port, and refraction indices parameters it removes the distor
 Example of using d0_estimation.py
 
 ```
-python scripts/demo_correction.py --cfg config/camera_flatport_D0.yaml
+python scripts/d0_estimation.py --cfg config/camera_flatport_D0.yaml
 ```
 
 Example of using correction.py
