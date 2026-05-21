@@ -26,9 +26,13 @@ def main():
     x0 = cfg['initial_guess']
     init_guess = np.array([x0, 0.0, 0.0], dtype=np.float64)
     res = least_squares(pu.optim_d0, init_guess, args=(matrixK, normal, ng, nw, d1))
-    x0 = res.x[0]
-    virtual_d_0 = res.x[1]
-    optimal_caustic_length = res.x[2]
+    
+    final_params = np.array([res.x[0], 0.0, 0.0], dtype=np.float64)
+    pu.optim_d0(final_params, matrixK, normal, ng, nw, d1)
+    
+    x0 = final_params[0]
+    virtual_d_0 = final_params[1]
+    optimal_caustic_length = final_params[2]
     approxErr = res.cost
 
     print(f'\n---- Optimization Results ----')

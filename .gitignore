@@ -4,6 +4,7 @@ data/
 scripts/__pycache__
 scripts/__pycache__/
 scripts/lib/__pycache__/
+scripts/lib/__pycache__
 imgs/# pixi environments
 .pixi/*
 !.pixi/config.toml
