@@ -1,0 +1,23 @@
+[workspace]
+authors = ["EmilioOlivastri <emilito.olivastri@gmail.com>"]
+channels = ["conda-forge"]
+name = "PinaxPython"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks.estimate_d0]
+cmd = "python scripts/d0_estimation.py --cfg"
+description = "Estimate the optimal d0 for creating undistortion the map. Usage: `pixi estimate_d0 <path_to_config_file>`"
+
+[tasks.create_undistortion_map]
+cmd = "python scripts/correction.py --cfg"
+description = "Create an undistortion map. Usage: `pixi create_undistortion_map <path_to_config_file>`"
+
+[dependencies]
+python = ">=3.10.0,<3.12"
+numpy = ">=2.4.6,<3"
+scipy = ">=1.17.1,<2"
+opencv = ">=4.13.0,<5"
+pyyaml = ">=6.0.3,<7"
+tqdm = ">=4.67.3,<5"
+numba = ">=0.65.1,<0.66"
