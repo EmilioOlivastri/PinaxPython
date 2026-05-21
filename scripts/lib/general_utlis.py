@@ -21,6 +21,7 @@ def append_to_cfg(cfg_file, key, value):
         lines = file.readlines()
 
     entry = f'{key}: {value}\n'
+    entry2 = 'prj_distance: 1.0\n'
     for i, line in enumerate(lines):
         if line.startswith(f'{key}:'):
             lines[i] = entry
@@ -28,6 +29,7 @@ def append_to_cfg(cfg_file, key, value):
     else:
         lines.append('\n')  # Add a newline before the new entry if the file doesn't end with one
         lines.append(entry)
+        lines.append(entry2)
 
     with open(cfg_file, 'w') as file:
         file.writelines(lines)
