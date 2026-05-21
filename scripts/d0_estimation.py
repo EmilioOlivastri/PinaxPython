@@ -43,6 +43,8 @@ def main():
     print(f'Optimal caustic length: {optimal_caustic_length}')
     print(f'Approximation error: {approxErr}')
 
+    gu.append_to_cfg(args.cfg, 'virtual_d0', float(virtual_d_0))
+
 
     real_d0 = cfg['distance_to_glass']
     r_input = np.array([real_d0, 0.0, 0.0], dtype=np.float64)

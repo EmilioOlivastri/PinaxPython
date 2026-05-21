@@ -15,3 +15,19 @@ def read_cfg(cfg_file):
         except yaml.YAMLError as exc:
             print(exc)
     return cfg
+
+def append_to_cfg(cfg_file, key, value):
+    with open(cfg_file, 'r') as file:
+        lines = file.readlines()
+
+    entry = f'{key}: {value}\n'
+    for i, line in enumerate(lines):
+        if line.startswith(f'{key}:'):
+            lines[i] = entry
+            break
+    else:
+        lines.append('\n')  # Add a newline before the new entry if the file doesn't end with one
+        lines.append(entry)
+
+    with open(cfg_file, 'w') as file:
+        file.writelines(lines)
