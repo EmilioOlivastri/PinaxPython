@@ -88,10 +88,17 @@ def main():
     # Undistortion using the correction map
     undistorted_img = cv2.remap(rez_img, mapx, mapy, cv2.INTER_LINEAR)
 
-    cv2.imshow('Undistorted Image', undistorted_img)
-    cv2.waitKey(0)
-    cv2.imshow('Original Image', rez_img)
-    cv2.waitKey(0)
+    out_path = cfg.get('output_path', cfg['path'].rsplit('.', 1)[0] + '_undistorted.jpg')
+    cv2.imwrite(out_path, undistorted_img)
+    print(f'Saved undistorted image: {out_path}')
+
+    try:
+        cv2.imshow('Undistorted Image', undistorted_img)
+        cv2.waitKey(0)
+        cv2.imshow('Original Image', rez_img)
+        cv2.waitKey(0)
+    except cv2.error:
+        pass
 
     return 0
 
